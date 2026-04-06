@@ -8,14 +8,37 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="fr">
-      <body>
-        <header className="bg-blue-600 text-white p-4">
-          <h1 className="text-2xl font-bold">Tanakh Reader</h1>
-        </header>
-        <main className="p-4">{children}</main>
-        <footer className="bg-gray-200 text-gray-700 p-4 text-center">
-          © 2026 Tanakh App
-        </footer>
+      <body className="min-h-dvh bg-gradient-to-b from-white to-gray-50 text-gray-900 antialiased">
+        <div className="mx-auto min-h-dvh max-w-5xl px-4 sm:px-6">
+          <header className="sticky top-0 z-10 -mx-4 border-b border-gray-200/70 bg-white/80 px-4 py-4 backdrop-blur sm:-mx-6 sm:px-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-baseline gap-3">
+                <h1 className="text-lg font-semibold tracking-tight text-gray-900 sm:text-xl">
+                  Tanakh
+                </h1>
+                <span className="hidden text-sm text-gray-500 sm:inline">
+                  Famakiana tsotra
+                </span>
+              </div>
+              <div className="text-xs text-gray-500">
+                v0.1
+              </div>
+            </div>
+          </header>
+
+          <main className="py-6 sm:py-10">
+            {children}
+          </main>
+
+          <footer className="pb-8 pt-10 text-center text-xs text-gray-500">
+            <div className="mx-auto max-w-2xl">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+              <p className="mt-5">
+                © 2026 Tanakh — Baiboly amin’ny endrika local.
+              </p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
