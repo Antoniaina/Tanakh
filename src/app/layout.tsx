@@ -32,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
           <footer className="pb-8 pt-10 text-center text-xs text-gray-500">
             <div className="mx-auto max-w-2xl">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+              <div className="h-px w-full sticky bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
               <p className="mt-5">
                 © 2026 Tanakh — Baiboly amin’ny endrika local.
               </p>
