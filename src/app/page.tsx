@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {books.map((book) => {
-            const href = `/bible/${encodeURIComponent(book)}/1`;
+            const href = `/bible/${encodeURIComponent(book)}/`;
             return (
               <Link
                 key={book}
