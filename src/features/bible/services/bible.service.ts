@@ -40,16 +40,11 @@ export async function getChapter(book: string, chapter: string): Promise<Chapter
     return content[chapter];
 }
 
-export async function getAllBooks(): Promise<string[]> {
-    const bookList = await Promise.all( 
-        ["Testameta taloha", "Testameta vaovao"].map(async books => {
-           return (await fs.readdir(path.join(BASE_PATH, books)));
-        })
-    );
-    
-    const allBooks = bookList.flat().map(f => f.replace(".json", ""));
+export async function getBooksMeta(): Promise<Record<string, string[]>> {
+    const manifest_path = path.join(BASE_PATH, "manifest.json");
+    const content = await fs.readFile(manifest_path, "utf-8");
 
-    return Array.from(new Set(allBooks));
+    return JSON.parse(content);
 }
 
 
